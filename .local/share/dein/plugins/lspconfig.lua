@@ -36,8 +36,6 @@ end
 -- When you snippet to enable the language server, 
 -- write the settings of specified language.
 -- ref. https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
---
--- e.g.)
--- require'lspconfig'.vimls.setup{
---   on_attach = on_attach,
--- }
+require'lspconfig'.solargraph.setup{
+  on_attach = on_attach,
+}
