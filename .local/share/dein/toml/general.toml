@@ -33,4 +33,11 @@ repo = 'ojroques/vim-oscyank'
 hook_add = 'source ~/.local/share/dein/plugins/oscyank.vim'
 
 [[plugins]]
+repo = 'tpope/vim-endwise'
+
+[[plugins]]
 repo = 'vim-denops/denops.vim'
+
+[[plugins]]
+repo = 'windwp/nvim-autopairs'
+hook_add = 'source ~/.local/share/dein/plugins/autopairs.lua'
