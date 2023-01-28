@@ -56,4 +56,7 @@ repo = 'Shougo/pum.vim'
 hook_add = 'source ~/.local/share/dein/plugins/pum.vim'
 
 [[plugins]]
+repo = 'shun/ddu-source-buffer'
+
+[[plugins]]
 repo = 'shun/ddu-source-rg'
