@@ -29,8 +29,8 @@ hook_add = 'source ~/.local/share/dein/plugins/lspconfig.lua'
 repo = 'nvim-tree/nvim-web-devicons'
 
 [[plugins]]
-repo = 'ojroques/vim-oscyank'
-hook_add = 'source ~/.local/share/dein/plugins/oscyank.vim'
+repo = 'ojroques/nvim-osc52'
+hook_add = 'source ~/.local/share/dein/plugins/osc52.lua'
 
 [[plugins]]
 repo = 'tpope/vim-endwise'
