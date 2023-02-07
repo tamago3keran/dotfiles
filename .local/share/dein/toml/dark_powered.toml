@@ -2,10 +2,6 @@
 repo = 'ryota2357/ddu-column-icon_filename'
 
 [[plugins]]
-repo = 'Shougo/ddc.vim'
-hook_add = 'source ~/.local/share/dein/plugins/ddc.vim'
-
-[[plugins]]
 repo = 'Shougo/ddc-matcher_head'
 
 [[plugins]]
@@ -21,11 +17,9 @@ repo = 'Shougo/ddc-source-nvim-lsp'
 repo = 'Shougo/ddc-ui-native'
 
 [[plugins]]
-repo = 'Shougo/ddu.vim'
-hook_add = 'source ~/.local/share/dein/plugins/ddu.vim'
-
-[[plugins]]
-repo = 'Shougo/ddu-column-filename'
+repo = 'Shougo/ddc.vim'
+hook_add = 'source ~/.local/share/dein/plugins/ddc.vim'
+depends = ['denops.vim']
 
 [[plugins]]
 repo = 'Shougo/ddu-filter-sorter_alpha'
@@ -52,8 +46,9 @@ repo = 'Shougo/ddu-filter-matcher_substring'
 repo = 'Shougo/ddu-kind-file'
 
 [[plugins]]
-repo = 'Shougo/pum.vim'
-hook_add = 'source ~/.local/share/dein/plugins/pum.vim'
+repo = 'Shougo/ddu.vim'
+hook_add = 'source ~/.local/share/dein/plugins/ddu.vim'
+depends = ['denops.vim']
 
 [[plugins]]
 repo = 'shun/ddu-source-buffer'

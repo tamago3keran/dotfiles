@@ -9,6 +9,16 @@ Welcome to my world! Here are configuration files for neovim plugins based on da
 |:--:|:--:|:--:|
 |<img src="https://raw.githubusercontent.com/tamago3keran/images/main/dotfiles/image_02.png">|<img src="https://raw.githubusercontent.com/tamago3keran/images/main/dotfiles/image_03.png">|<img src="https://raw.githubusercontent.com/tamago3keran/images/main/dotfiles/image_04.png">|
 
+## About
+There are some branches in this repository. Each branch has dotfiles, with different functionality.
+
+|Branch|Function|
+|:--:|:--|
+|base|neovim plugins|
+|dotfiles|neovim plugins + LSP ( Vim script )
+|react|neovim plugins + LSP ( ESLint, TypeScript Language Server )|
+|ruby|neovim plugins + LSP ( Ruby )
+
 ## Setup
 I usually use a MacBook. And I use Docker for development. So the following setup assumes that you are using Docker on a MacBook.
 

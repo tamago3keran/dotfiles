@@ -5,13 +5,11 @@ hook_add = 'source ~/.local/share/dein/plugins/nightfox.vim'
 [[plugins]]
 repo = 'feline-nvim/feline.nvim'
 hook_add = 'source ~/.local/share/dein/plugins/feline.lua'
+depends = ['nvim-web-devicons']
 
 [[plugins]]
 repo = 'lewis6991/gitsigns.nvim'
 hook_add = 'source ~/.local/share/dein/plugins/gitsigns.lua'
-
-[[plugins]]
-repo = 'matsui54/denops-popup-preview.vim'
 
 [[plugins]]
 repo = 'mhinz/vim-startify'
@@ -22,22 +20,8 @@ repo = 'nanozuki/tabby.nvim'
 hook_add = 'source ~/.local/share/dein/plugins/tabby.lua'
 
 [[plugins]]
-repo = 'neovim/nvim-lspconfig'
-hook_add = 'source ~/.local/share/dein/plugins/lspconfig.lua'
-
-[[plugins]]
-repo = 'nvim-tree/nvim-web-devicons'
-
-[[plugins]]
 repo = 'ojroques/nvim-osc52'
 hook_add = 'source ~/.local/share/dein/plugins/osc52.lua'
 
 [[plugins]]
-repo = 'tpope/vim-endwise'
-
-[[plugins]]
 repo = 'vim-denops/denops.vim'
-
-[[plugins]]
-repo = 'windwp/nvim-autopairs'
-hook_add = 'source ~/.local/share/dein/plugins/autopairs.lua'

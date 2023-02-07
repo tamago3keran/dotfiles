@@ -1,5 +1,4 @@
 set completeopt-=preview
-call popup_preview#enable()
 
 call ddc#custom#patch_global('completionMenu', 'pum.vim')
 call ddc#custom#patch_global('ui', 'native')
