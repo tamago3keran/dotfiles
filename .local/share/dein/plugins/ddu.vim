@@ -35,7 +35,7 @@ call ddu#custom#patch_local('filer', #{
     \   ui: 'filer',
     \   sourceOptions: #{
     \     _: #{
-    \       columns: ['icon_filename'],
+    \       columns: ['devicon_filename'],
     \     },
     \   },
     \ })
