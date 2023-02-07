@@ -1,7 +1,4 @@
 [[plugins]]
-repo = 'ryota2357/ddu-column-icon_filename'
-
-[[plugins]]
 repo = 'Shougo/ddc-matcher_head'
 
 [[plugins]]
@@ -55,3 +52,6 @@ repo = 'shun/ddu-source-buffer'
 
 [[plugins]]
 repo = 'shun/ddu-source-rg'
+
+[[plugins]]
+repo = 'tamago3keran/ddu-column-devicon_filename'
