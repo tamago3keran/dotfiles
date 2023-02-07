@@ -16,6 +16,7 @@ There are some branches in this repository. Each branch has dotfiles, with diffe
 |:--:|:--|
 |base|neovim plugins|
 |dotfiles|neovim plugins + LSP ( Vim script )
+|react|neovim plugins + LSP ( ESLint, TypeScript Language Server )|
 |ruby|neovim plugins + LSP ( Ruby )
 
 ## Setup
