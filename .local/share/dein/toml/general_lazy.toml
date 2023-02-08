@@ -4,11 +4,6 @@ hook_source = 'source ~/.local/share/dein/plugins/denops-popup-preview.vim'
 on_source = ['ddc.vim']
 
 [[plugins]]
-repo = 'neovim/nvim-lspconfig'
-hook_source = 'source ~/.local/share/dein/plugins/lspconfig.lua'
-on_source = ['ddc.vim']
-
-[[plugins]]
 repo = 'nvim-tree/nvim-web-devicons'
 on_source = ['feline.nvim']
 

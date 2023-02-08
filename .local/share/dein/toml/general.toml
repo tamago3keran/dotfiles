@@ -20,6 +20,10 @@ repo = 'nanozuki/tabby.nvim'
 hook_add = 'source ~/.local/share/dein/plugins/tabby.lua'
 
 [[plugins]]
+repo = 'neovim/nvim-lspconfig'
+hook_add = 'source ~/.local/share/dein/plugins/lspconfig.lua'
+
+[[plugins]]
 repo = 'ojroques/nvim-osc52'
 hook_add = 'source ~/.local/share/dein/plugins/osc52.lua'
 
