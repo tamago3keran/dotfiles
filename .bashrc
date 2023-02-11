@@ -122,3 +122,6 @@ if [ -d ~/.software_configurations ]; then
         fi
     done
 fi
+
+# Supports Japanese
+export LANG=ja_JP.UTF-8
