@@ -4,6 +4,10 @@ call ddu#custom#patch_global(#{
     \     ff: #{
     \       split: 'floating',
     \       prompt: '> ',
+    \       winCol: &columns / 8,
+    \       winHeight: 40,
+    \       winRow: &lines / 4 - 8,
+    \       winWidth: &columns * 3 / 4,
     \     }
     \   },
     \   sourceOptions: #{
