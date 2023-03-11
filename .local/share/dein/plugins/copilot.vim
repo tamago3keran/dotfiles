@@ -1,3 +1,9 @@
+let g:copilot_filetypes = {
+      \ '*': v:false,
+      \ 'javascript': v:true,
+      \ 'typescript': v:true,
+      \ }
+
 nnoremap [copilot] <Nop>
 nmap <C-c> [copilot]
 nnoremap [copilot]e :Copilot enable<CR>
