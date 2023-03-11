@@ -63,6 +63,11 @@ call ddu#custom#patch_local('file_rec', #{
     \       matchers: ['matcher_substring'],
     \     },
     \   },
+    \   sourceParams: #{
+    \     file_rec: #{
+    \       ignoredDirectories: ['.git']
+    \     },
+    \   },
     \   uiParams: #{
     \     ff: #{
     \       startFilter: v:true,
