@@ -1,5 +1,5 @@
 local fmt = string.format
-local vi_mode_utils = require('feline.providers.vi_mode')
+local mode_utils = require('lualine.utils.mode')
 
 ----------------------------------------------------------------------------------------------------
 -- Colors
@@ -13,7 +13,7 @@ local hex = function(n)
   end
 end
 
----Parse `style` string into nvim_set_hl options
+---Parse style string into nvim_set_hl options
 ---@param style string
 ---@return table
 local function parse_style(style)
@@ -68,7 +68,6 @@ local function generate_pallet_from_colorscheme()
     cyan    = { index = 6, default = "#63cdcf" },
     white   = { index = 7, default = "#dfdfe0" },
   }
-
 
   local diagnostic_map = {
     hint = { hl = "DiagnosticHint", default = color_map.green.default },
@@ -153,16 +152,20 @@ vim.api.nvim_create_autocmd({ "SessionLoadPost", "ColorScheme" }, {
 })
 
 ----------------------------------------------------------------------------------------------------
--- Feline
+-- lualine
 
 local vi = {
   bg_colors = {
     ['NORMAL'] = 'UserRvCyan',
     ['INSERT'] = 'UserSLStatus',
     ['VISUAL'] = 'UserRvMagenta',
-    ['LINES'] = 'UserRvMagenta',
+    ['V-LINE'] = 'UserRvMagenta',
+    ['S-LINE'] = 'UserRvMagenta',
     ['BLOCK'] = 'UserRvMagenta',
+    ['V-BLOCK'] = 'UserRvMagenta',
+    ['S-BLOCK'] = 'UserRvMagenta',
     ['REPLACE'] = 'UserRvRed',
+    ['V-REPLACE'] = 'UserRvRed',
     ['SELECT'] = 'UserRvMagenta',
     ['COMMAND'] = 'UserRvYellow',
     ['TERMINAL'] = 'UserRvBlue',
@@ -172,134 +175,172 @@ local vi = {
     ['NORMAL'] = 'UserCyan',
     ['INSERT'] = 'UserSLStatusBg',
     ['VISUAL'] = 'UserMagenta',
-    ['LINES'] = 'UserMagenta',
+    ['V-LINE'] = 'UserMagenta',
+    ['S-LINE'] = 'UserMagenta',
     ['BLOCK'] = 'UserMagenta',
+    ['V-BLOCK'] = 'UserMagenta',
+    ['S-BLOCK'] = 'UserMagenta',
     ['REPLACE'] = 'UserRed',
+    ['V-REPLACE'] = 'UserRed',
     ['SELECT'] = 'UserMagenta',
     ['COMMAND'] = 'UserYellow',
     ['TERMINAL'] = 'UserBlue',
   },
-
-  icons = {
-    dos = "",
-    unix = "",
-    mac = "",
-    vertical_bar_thin = "│",
-  }
 }
 
 local function vi_bg_hl()
-  return vi.bg_colors[vi_mode_utils.get_vim_mode()] or "UserRvBlack"
+  return vi.bg_colors[mode_utils.get_mode()] or "UserRvBlack"
 end
 
 local function vi_fg_hl()
-  return vi.fg_colors[vi_mode_utils.get_vim_mode()] or "UserBlack"
+  return vi.fg_colors[mode_utils.get_mode()] or 'UserBlack'
 end
 
-local components = {
-  left_block = {
-    provider = '▊ ',
-    hl = vi_fg_hl,
-  },
-  vim_icon = {
-    provider = 'vi_mode',
-    hl = vi_fg_hl,
-  },
-  vimode = {
-    provider = function() return fmt(" %s ", vi_mode_utils.get_vim_mode()) end,
-    hl = vi_fg_hl,
-  },
-  git_branch = {
-    provider = "git_branch",
-    hl = "UserSLGitBranch",
-    left_sep = { str = " ", hl = "UserSLGitBranch" },
-    right_sep = { str = " ", hl = "UserSLGitBranch" },
-    enabled = function() return vim.b.gitsigns_status_dict ~= nil end,
-  },
-  git_diff_added = {
-    provider = "git_diff_added",
-    hl = "UserGreen",
-    right_sep = { str = " ", hl = "StatusLine" },
-  },
-  git_diff_removed = {
-    provider = "git_diff_removed",
-    hl = "UserRed",
-    right_sep = { str = " ", hl = "StatusLine" },
-  },
-  git_diff_changed = {
-    provider = "git_diff_changed",
-    hl = "UserYellow",
-  },
-  file_info = {
-    provider = "file_info",
-    hl = "StatusLine",
-    left_sep = { str = " ", hl = "StatusLine" },
-    right_sep = { str = " ", hl = "StatusLine" },
-  },
-  file_type = {
-    provider = function() return fmt(" %s ", vim.bo.filetype:upper()) end,
-    hl = "UserSLAlt",
-  },
-  file_enc = {
-    provider = function()
-      local os = vi.icons[vim.bo.fileformat] or ""
-      return fmt(" %s %s ", os, vim.bo.fileencoding)
+local function diff_source()
+  local gitsigns = vim.b.gitsigns_status_dict
+  if gitsigns then
+    return {
+      added = gitsigns.added,
+      modified = gitsigns.changed,
+      removed = gitsigns.removed
+    }
+  end
+end
+
+local lualine_a = {
+  {
+    function()
+      return '▊ '
     end,
-    hl = "StatusLine",
+    color = vi_fg_hl,
+    padding = { right = 0 },
   },
-  cur_position = {
-    provider = function() return fmt("  %3d:%-2d ", unpack(vim.api.nvim_win_get_cursor(0))) end,
-    hl = vi_bg_hl,
-  },
-  cur_percent = {
-    provider = function() return " " .. require("feline.providers.cursor").line_percentage() .. "  " end,
-    hl = vi_bg_hl,
-    left_sep = { str = vi.icons.vertical_bar_thin, hl = vi_bg_hl },
-  },
-  in_file_info = {
-    provider = "file_info",
-    hl = "StatusLine",
-  },
-  in_position = {
-    provider = "position",
-    hl = vi_bg_hl,
-  },
-  default = {
-    provider = "",
-    hl = "StatusLine",
-  },
-}
-
-local active = {
-  { -- left
-    components.left_block,
-    components.vim_icon,
-    components.vimode,
-    components.git_branch,
-    components.git_diff_added,
-    components.git_diff_removed,
-    components.git_diff_changed,
-  },
-  { -- middle
-    components.file_info,
-  },
-  { -- right
-    components.file_type,
-    components.file_enc,
-    components.cur_position,
-    components.cur_percent,
-  },
-}
-
-local inactive = {
-  { components.default }, -- left
-  { components.in_file_info }, -- middle
-  { components.default }, -- right
-}
-
-require('feline').setup {
-  components = {
-    active = active,
-    inactive = inactive,
+  {
+    'mode',
+    icon = '',
+    color = vi_fg_hl,
+    padding = { left = 0, right = 1 },
   }
+}
+
+local lualine_b = {
+  {
+    'branch',
+    icon = '',
+    color = 'UserSLGitBranch',
+  },
+  {
+    'diff',
+    colored = true,
+    diff_color = {
+      added    = 'UserGreen',
+      modified = 'UserYellow',
+      removed  = 'UserRed'
+    },
+    symbols = {
+      added    = ' ',
+      modified = ' ',
+      removed = ' '
+    },
+    source = diff_source
+  }
+}
+
+local lualine_c = {
+  {
+    'filetype',
+    icon_only = true,
+    padding = { left = 1 },
+  },
+  {
+    'filename',
+    path = 1,
+    symbols = {
+      modified = '●',
+      readonly = '🔒'
+    }
+  }
+}
+
+local lualine_x = {
+  {
+    'filetype',
+    icons_enabled = false,
+    color = 'UserSLAlt'
+  },
+  {
+    'fileformat',
+    color = 'StatusLine'
+  },
+  {
+    'encoding',
+    color = 'StatusLine',
+    padding = { right = 1 },
+  }
+}
+
+local lualine_y = {
+  {
+    'location',
+    color = 'UserRvBlack'
+  }
+}
+
+local lualine_z = {
+  {
+    'progress',
+    color = vi_bg_hl,
+  }
+}
+
+local inactive_lualine_c = {
+  {
+    'filename',
+    path = 1,
+    symbols = {
+      modified = '●',
+      readonly = '🔒'
+    },
+  }
+}
+
+require('lualine').setup {
+  options = {
+    component_separators = '',
+    section_separators = '',
+    icons_enabled = true,
+    theme = 'auto',
+    disabled_filetypes = {
+      statusline = {},
+      winbar = {},
+    },
+    ignore_focus = {},
+    always_divide_middle = true,
+    globalstatus = false,
+    refresh = {
+      statusline = 1000,
+      tabline = 1000,
+      winbar = 1000,
+    }
+  },
+  sections = {
+    lualine_a = lualine_a,
+    lualine_b = lualine_b,
+    lualine_c = lualine_c,
+    lualine_x = lualine_x,
+    lualine_y = lualine_y,
+    lualine_z = lualine_z
+  },
+  inactive_sections = {
+    lualine_a = {},
+    lualine_b = {},
+    lualine_c = inactive_lualine_c,
+    lualine_x = {},
+    lualine_y = {},
+    lualine_z = {}
+  },
+  tabline = {},
+  winbar = {},
+  inactive_winbar = {},
+  extensions = {}
 }
