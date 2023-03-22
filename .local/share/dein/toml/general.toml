@@ -3,11 +3,6 @@ repo = 'EdenEast/nightfox.nvim'
 hook_add = 'source ~/.local/share/dein/plugins/nightfox.vim'
 
 [[plugins]]
-repo = 'feline-nvim/feline.nvim'
-hook_add = 'source ~/.local/share/dein/plugins/feline.lua'
-depends = ['nvim-web-devicons']
-
-[[plugins]]
 repo = 'github/copilot.vim'
 hook_add = 'source ~/.local/share/dein/plugins/copilot.vim'
 
@@ -26,6 +21,11 @@ hook_add = 'source ~/.local/share/dein/plugins/tabby.lua'
 [[plugins]]
 repo = 'neovim/nvim-lspconfig'
 hook_add = 'source ~/.local/share/dein/plugins/lspconfig.lua'
+
+[[plugins]]
+repo = 'nvim-lualine/lualine.nvim'
+hook_add = 'source ~/.local/share/dein/plugins/lualine.lua'
+depends = ['nvim-web-devicons']
 
 [[plugins]]
 repo = 'ojroques/nvim-osc52'
