@@ -1,4 +1,7 @@
 require('gitsigns').setup {
+  signcolumn = false,
+  numhl = true,
+  linehl = true,
   on_attach = function(bufnr)
     local gs = package.loaded.gitsigns
 
