@@ -7,6 +7,9 @@ repo = 'github/copilot.vim'
 hook_add = 'source ~/.local/share/dein/plugins/copilot.vim'
 
 [[plugins]]
+repo = 'kevinhwang91/nvim-hlslens'
+
+[[plugins]]
 repo = 'lewis6991/gitsigns.nvim'
 hook_add = 'source ~/.local/share/dein/plugins/gitsigns.lua'
 
