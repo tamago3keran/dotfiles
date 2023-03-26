@@ -32,4 +32,8 @@ repo = 'ojroques/nvim-osc52'
 hook_add = 'source ~/.local/share/dein/plugins/osc52.lua'
 
 [[plugins]]
+repo = 'petertriho/nvim-scrollbar'
+hook_add = 'source ~/.local/share/dein/plugins/scrollbar.lua'
+
+[[plugins]]
 repo = 'vim-denops/denops.vim'
