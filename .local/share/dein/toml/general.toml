@@ -43,4 +43,8 @@ repo = 'petertriho/nvim-scrollbar'
 hook_add = 'source ~/.local/share/dein/plugins/scrollbar.lua'
 
 [[plugins]]
+repo = "rcarriga/nvim-notify"
+hook_add = 'source ~/.local/share/dein/plugins/notify.lua'
+
+[[plugins]]
 repo = 'vim-denops/denops.vim'
