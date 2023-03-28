@@ -10,11 +10,6 @@ set shiftwidth=2
 set expandtab
 set splitright
 
-" Set Vim configurations (option)
-tnoremap <Esc> <C-\><C-n>
-command! -nargs=* T split | wincmd j | resize 20 | terminal bash <args>
-autocmd TermOpen * startinsert
-
 " Set Dein base path (required)
 let s:dein_base = '/root/.local/share/dein'
 
