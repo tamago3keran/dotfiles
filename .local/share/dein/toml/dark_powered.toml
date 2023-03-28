@@ -40,6 +40,9 @@ repo = 'Shougo/ddu-filter-converter_display_word'
 repo = 'Shougo/ddu-filter-matcher_substring'
 
 [[plugins]]
+repo = 'Shougo/ddu-filter-matcher_ignore_files'
+
+[[plugins]]
 repo = 'Shougo/ddu-kind-file'
 
 [[plugins]]

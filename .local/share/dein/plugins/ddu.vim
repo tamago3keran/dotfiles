@@ -19,6 +19,9 @@ call ddu#custom#patch_global(#{
     \     matcher_substring: #{
     \       highlightMatched: 'Title',
     \     },
+    \     matcher_ignore_files: #{
+    \       ignoreGlobs: ['.git'],
+    \     },
     \   },
     \   kindOptions: #{
     \     file: #{
@@ -40,6 +43,7 @@ call ddu#custom#patch_local('filer', #{
     \   sourceOptions: #{
     \     _: #{
     \       columns: ['devicon_filename'],
+    \       matchers: ['matcher_ignore_files'],
     \     },
     \   },
     \ })
