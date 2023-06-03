@@ -74,7 +74,7 @@ call ddu#custom#patch_local('file_rec', #{
     \   },
     \   sourceParams: #{
     \     file_rec: #{
-    \       ignoredDirectories: ['.git', 'node_modules']
+    \       ignoredDirectories: ['.git']
     \     },
     \   },
     \   uiParams: #{
