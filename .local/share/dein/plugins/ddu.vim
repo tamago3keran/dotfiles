@@ -46,6 +46,11 @@ call ddu#custom#patch_local('filer', #{
     \       matchers: ['matcher_ignore_files'],
     \     },
     \   },
+    \   columnParams: #{
+    \     devicon_filename: #{
+    \       indentationWidth: 2,
+    \     },
+    \   },
     \ })
 
 call ddu#custom#patch_local('grep', #{
@@ -69,7 +74,7 @@ call ddu#custom#patch_local('file_rec', #{
     \   },
     \   sourceParams: #{
     \     file_rec: #{
-    \       ignoredDirectories: ['.git']
+    \       ignoredDirectories: ['.git', 'node_modules']
     \     },
     \   },
     \   uiParams: #{
