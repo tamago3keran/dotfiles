@@ -2,6 +2,7 @@ call ddu#custom#patch_global(#{
     \   ui: 'ff',
     \   uiParams: #{
     \     ff: #{
+    \       filterFloatingPosition: 'bottom',
     \       split: 'floating',
     \       prompt: '> ',
     \       winCol: &columns / 8,
@@ -74,7 +75,7 @@ call ddu#custom#patch_local('file_rec', #{
     \   },
     \   sourceParams: #{
     \     file_rec: #{
-    \       ignoredDirectories: ['.git', 'node_modules']
+    \       ignoredDirectories: ['.git']
     \     },
     \   },
     \   uiParams: #{
