@@ -1,7 +1,6 @@
 set completeopt-=preview
 
-call ddc#custom#patch_global('completionMenu', 'pum.vim')
-call ddc#custom#patch_global('ui', 'native')
+call ddc#custom#patch_global('ui', 'pum')
 call ddc#custom#patch_global('sources', ['around', 'nvim-lsp'])
 call ddc#custom#patch_global('sourceOptions', #{
       \   _: #{
