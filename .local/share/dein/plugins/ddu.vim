@@ -2,6 +2,7 @@ call ddu#custom#patch_global(#{
     \   ui: 'ff',
     \   uiParams: #{
     \     ff: #{
+    \       filterFloatingPosition: 'bottom',
     \       split: 'floating',
     \       prompt: '> ',
     \       winCol: &columns / 8,
