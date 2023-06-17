@@ -11,7 +11,7 @@ repo = 'Shougo/ddc-source-around'
 repo = 'Shougo/ddc-source-nvim-lsp'
 
 [[plugins]]
-repo = 'Shougo/ddc-ui-native'
+repo = 'Shougo/ddc-ui-pum'
 
 [[plugins]]
 repo = 'Shougo/ddc.vim'
