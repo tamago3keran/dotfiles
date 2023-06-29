@@ -2,13 +2,27 @@ call ddu#custom#patch_global(#{
     \   ui: 'ff',
     \   uiParams: #{
     \     ff: #{
-    \       filterFloatingPosition: 'bottom',
-    \       split: 'floating',
+    \       autoAction: #{ name: 'preview' },
     \       prompt: '> ',
+    \       split: 'floating',
+    \       floatingBorder: 'rounded',
+    \       floatingTitle: ' Fuzzy Finder ',
+    \       floatingTitlePos: 'center',
+    \       filterFloatingTitle: ' Filter ',
+    \       filterFloatingTitlePos: 'center',
+    \       filterFloatingPosition: 'bottom',
     \       winCol: &columns / 8,
-    \       winHeight: 40,
-    \       winRow: &lines / 4 - 8,
-    \       winWidth: &columns * 3 / 4,
+    \       winRow: &lines / 4 - 9,
+    \       winWidth: (&columns - (&columns / 4)) / 2,
+    \       winHeight: &lines - (&lines / 4),
+    \       previewFloating: v:true,
+    \       previewFloatingBorder: 'rounded',
+    \       previewFloatingTitle: ' Preview ',
+    \       previewFloatingTitlePos: 'center',
+    \       previewCol: (&columns / 8) + (&columns - (&columns / 4)) / 2 + 2,
+    \       previewRow: (&lines / 4 - 9) + (&lines - (&lines / 4)) + 5,
+    \       previewWidth: (&columns - (&columns / 4)) / 2,
+    \       previewHeight: (&lines - (&lines / 4)) + 5,
     \     }
     \   },
     \   sourceOptions: #{
@@ -65,6 +79,11 @@ call ddu#custom#patch_local('grep', #{
     \       args: ['--hidden', '--column'],
     \     },
     \   },
+    \   uiParams: #{
+    \     ff: #{
+    \       startFilter: v:true,
+    \     }
+    \   }
     \ })
 
 call ddu#custom#patch_local('file_rec', #{
@@ -132,8 +151,8 @@ endfunction
 
 autocmd FileType ddu-ff-filter call s:ddu_filter_my_settings()
 function! s:ddu_filter_my_settings() abort
-  inoremap <buffer><silent> <CR> <Esc><Cmd>close<CR>
-  inoremap <buffer><silent> <Esc> <Esc><Cmd>close<CR>
+  inoremap <buffer><silent> <CR> <Esc><Cmd>call ddu#ui#filer#do_action('leaveFilterWindow')<CR>
+  inoremap <buffer><silent> <Esc> <Esc><Cmd>call ddu#ui#ff#do_action('quit')<CR>
 endfunction
 
 augroup transparent-windows
