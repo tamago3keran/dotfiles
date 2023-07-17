@@ -2,6 +2,7 @@ call ddu#custom#patch_global(#{
     \   ui: 'ff',
     \   uiParams: #{
     \     ff: #{
+    \       startAutoAction: v:true,
     \       autoAction: #{ name: 'preview' },
     \       prompt: '> ',
     \       split: 'floating',
@@ -22,7 +23,7 @@ call ddu#custom#patch_global(#{
     \       previewCol: (&columns / 8) + (&columns - (&columns / 4)) / 2 + 2,
     \       previewRow: (&lines / 4 - 9) + (&lines - (&lines / 4)) + 5,
     \       previewWidth: (&columns - (&columns / 4)) / 2,
-    \       previewHeight: (&lines - (&lines / 4)) + 5,
+    \       previewHeight: (&lines - (&lines / 4)) + 3,
     \     }
     \   },
     \   sourceOptions: #{
