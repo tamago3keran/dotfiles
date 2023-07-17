@@ -1,17 +1,21 @@
 [[plugins]]
 repo = 'akinsho/toggleterm.nvim'
+rev = 'v2.7.1'
 hook_add = 'source ~/.local/share/dein/plugins/toggleterm.lua'
 
 [[plugins]]
 repo = 'EdenEast/nightfox.nvim'
+rev = 'v3.5.1'
 hook_add = 'source ~/.local/share/dein/plugins/nightfox.vim'
 
 [[plugins]]
 repo = 'github/copilot.vim'
+rev = 'v1.9.1'
 hook_add = 'source ~/.local/share/dein/plugins/copilot.vim'
 
 [[plugins]]
 repo = 'kevinhwang91/nvim-hlslens'
+rev = 'v1.0.0'
 
 [[plugins]]
 repo = 'lewis6991/gitsigns.nvim'
@@ -23,10 +27,12 @@ hook_add = 'source ~/.local/share/dein/plugins/startify.vim'
 
 [[plugins]]
 repo = 'nanozuki/tabby.nvim'
+rev = 'v2.1.5'
 hook_add = 'source ~/.local/share/dein/plugins/tabby.lua'
 
 [[plugins]]
 repo = 'neovim/nvim-lspconfig'
+rev = 'v0.1.6'
 hook_add = 'source ~/.local/share/dein/plugins/lspconfig.lua'
 
 [[plugins]]
@@ -44,3 +50,4 @@ hook_add = 'source ~/.local/share/dein/plugins/scrollbar.lua'
 
 [[plugins]]
 repo = 'vim-denops/denops.vim'
+rev = 'v5.0.0'
