@@ -51,6 +51,11 @@ call ddu#custom#patch_local('buffer', #{
     \       matchers: ['matcher_substring'],
     \     },
     \   },
+    \   uiParams: #{
+    \     ff: #{
+    \       startFilter: v:true,
+    \     }
+    \   }
     \ })
 
 call ddu#custom#patch_local('filer', #{
