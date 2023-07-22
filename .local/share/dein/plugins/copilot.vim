@@ -1,3 +1,5 @@
+let g:copilot_no_maps = v:true
+
 let g:copilot_filetypes = {
       \ '*': v:false,
       \ 'ruby': v:true,

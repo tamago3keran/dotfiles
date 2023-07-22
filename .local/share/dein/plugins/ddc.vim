@@ -1,7 +1,7 @@
 set completeopt-=preview
 
 call ddc#custom#patch_global('ui', 'pum')
-call ddc#custom#patch_global('sources', ['around', 'nvim-lsp'])
+call ddc#custom#patch_global('sources', ['around', 'copilot', 'nvim-lsp'])
 call ddc#custom#patch_global('sourceOptions', #{
       \   _: #{
       \     matchers: ['matcher_head'],
@@ -9,6 +9,9 @@ call ddc#custom#patch_global('sourceOptions', #{
       \   },
       \   around: #{
       \     mark: '[A]'
+      \   },
+      \   copilot: #{
+      \     mark: '[C]'
       \   },
       \   nvim-lsp: #{
       \     mark: '[L]',
