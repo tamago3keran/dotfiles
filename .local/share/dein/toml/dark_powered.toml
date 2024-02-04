@@ -18,7 +18,7 @@ repo = 'Shougo/ddc-ui-pum'
 
 [[plugins]]
 repo = 'Shougo/ddc.vim'
-rev = 'v3.9.0'
+rev = 'v4.3.1'
 hook_add = 'source ~/.local/share/dein/plugins/ddc.vim'
 depends = ['denops.vim']
 
@@ -53,7 +53,7 @@ repo = 'Shougo/ddu-kind-file'
 
 [[plugins]]
 repo = 'Shougo/ddu.vim'
-rev = 'v3.4.2'
+rev = 'v3.10.2'
 hook_add = 'source ~/.local/share/dein/plugins/ddu.vim'
 depends = ['denops.vim']
 

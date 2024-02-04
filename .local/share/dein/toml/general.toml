@@ -5,7 +5,7 @@ hook_add = 'source ~/.local/share/dein/plugins/toggleterm.lua'
 
 [[plugins]]
 repo = 'EdenEast/nightfox.nvim'
-rev = 'v3.5.1'
+rev = 'v3.9.3'
 hook_add = 'source ~/.local/share/dein/plugins/nightfox.vim'
 
 [[plugins]]
@@ -32,7 +32,7 @@ hook_add = 'source ~/.local/share/dein/plugins/tabby.lua'
 
 [[plugins]]
 repo = 'neovim/nvim-lspconfig'
-rev = 'v0.1.6'
+rev = 'v0.1.7'
 hook_add = 'source ~/.local/share/dein/plugins/lspconfig.lua'
 
 [[plugins]]
@@ -50,4 +50,4 @@ hook_add = 'source ~/.local/share/dein/plugins/scrollbar.lua'
 
 [[plugins]]
 repo = 'vim-denops/denops.vim'
-rev = 'v5.0.0'
+rev = 'v6.0.0'
