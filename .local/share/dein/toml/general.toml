@@ -1,6 +1,6 @@
 [[plugins]]
 repo = 'akinsho/toggleterm.nvim'
-rev = 'v2.7.1'
+rev = 'v2.9.0'
 hook_add = 'source ~/.local/share/dein/plugins/toggleterm.lua'
 
 [[plugins]]
@@ -10,7 +10,7 @@ hook_add = 'source ~/.local/share/dein/plugins/nightfox.vim'
 
 [[plugins]]
 repo = 'github/copilot.vim'
-rev = 'v1.9.1'
+rev = 'v1.18.0'
 hook_add = 'source ~/.local/share/dein/plugins/copilot.vim'
 
 [[plugins]]
@@ -27,7 +27,7 @@ hook_add = 'source ~/.local/share/dein/plugins/startify.vim'
 
 [[plugins]]
 repo = 'nanozuki/tabby.nvim'
-rev = 'v2.1.5'
+rev = 'v2.3.1'
 hook_add = 'source ~/.local/share/dein/plugins/tabby.lua'
 
 [[plugins]]
